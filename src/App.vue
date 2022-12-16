@@ -1,5 +1,18 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import { store } from './store.js';
+import HelloWorld from './components/HelloWorld.vue';
+
+export default {
+  components: {
+    HelloWorld
+  },
+  data() {
+    return {
+      store
+    }
+  }
+
+}
 </script>
 
 <template>
@@ -20,9 +33,11 @@ import HelloWorld from './components/HelloWorld.vue'
   padding: 1.5em;
   will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
