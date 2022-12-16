@@ -17,9 +17,16 @@ export default {
   },
   methods: {
     getMovies() {
-      // chiamata axios:
+
+      let myUrl = store.apiUrl;
+
+      // condizione:
+      if (store.searchTitle !== "") {
+        myUrl = `${store.apiSearchMovie}&query=${store.searchTitle}`
+      }
+
       axios
-        .get(store.apiUrl)
+        .get(myUrl)
         .then(res => {
           store.movieList = res.data.results;
         })
@@ -38,7 +45,7 @@ export default {
 <template>
 
   <AppHeader />
-  <MovieList />
+  <MovieList @searchMovie="getMovies" />
 </template>
 
 <style >

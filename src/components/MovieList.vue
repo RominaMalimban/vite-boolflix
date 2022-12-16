@@ -19,8 +19,8 @@ export default {
 <template>
 
     <section>
-        <input type="text">
-        <button>Search</button>
+        <input type="text" v-model="store.searchTitle">
+        <button type="submit" @click.prevent="$emit('searchMovie')">Search</button>
 
         <!-- contenitore padre che contiene singola card movie -->
         <div class="movies">
