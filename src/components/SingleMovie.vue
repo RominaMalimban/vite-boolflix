@@ -47,6 +47,10 @@ export default {
                 }
             }
             return this.listFlags[this.listFlags.length - 1].img
+        },
+        // funzione per trasformare il voto da 1 a 10 decimale in un numero intero da 1 a 5:
+        getVote() {
+            return Math.round(this.details.vote_average / 2);
         }
 
     }
@@ -60,13 +64,13 @@ export default {
     <div class="movie">
         <img :src="`https://image.tmdb.org/t/p/w200/${details.poster_path}`" alt="">
 
-        <!-- condizione in cui proprietà "title" è presente nell'oggetto "details" -->
+        <!-- condizione in cui proprietà title è presente nell'oggetto details -->
         <div v-if="details.title">
             <div>Titolo Film: {{ details.title }}</div>
             <div>Titolo originale film: {{ details.original_title }}</div>
         </div>
 
-        <!-- condizione in cui proprietà "name" è presente nell'oggetto "details" -->
+        <!-- condizione in cui proprietà name è presente nell'oggetto details -->
         <div v-else-if="details.name">
             <div>Titolo serie tv: {{ details.name }}</div>
             <div>Titolo originale serie tv : {{ details.original_name }}</div>
@@ -77,7 +81,7 @@ export default {
         </div>
 
         <div> Language: {{ details.original_language }}</div>
-        <div>{{ details.vote_average }}</div>
+        <div>Voto: {{ getVote }}</div>
     </div>
 
 </template>
