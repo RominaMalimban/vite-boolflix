@@ -38,6 +38,7 @@ export default {
 
     },
     computed: {
+        // funzione per trasformare stringa statica della lingua in immagine: 
         assignFlags() {
 
             for (let i = 0; i < this.listFlags.length; i++) {
@@ -59,10 +60,17 @@ export default {
     <div class="movie">
         <img :src="`https://image.tmdb.org/t/p/w200/${details.poster_path}`" alt="">
 
-        <div>Titolo Film: {{ details.title }}</div>
+        <!-- condizione in cui proprietà "title" è presente nell'oggetto "details" -->
+        <div v-if="details.title">
+            <div>Titolo Film: {{ details.title }}</div>
+            <div>Titolo originale film: {{ details.original_title }}</div>
+        </div>
 
-        <div>Titolo originale serie tv : {{ details.original_title }}</div>
-
+        <!-- condizione in cui proprietà "name" è presente nell'oggetto "details" -->
+        <div v-else-if="details.name">
+            <div>Titolo serie tv: {{ details.name }}</div>
+            <div>Titolo originale serie tv : {{ details.original_name }}</div>
+        </div>
 
         <div>
             <img :src="assignFlags" alt="" class="bandiera">
