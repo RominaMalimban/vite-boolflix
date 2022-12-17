@@ -3,7 +3,53 @@ export default {
     name: "SingleMovie",
     props: {
         details: Object
+    },
+    data() {
+        return {
+            listFlags: [
+                {
+                    img: "img/italy.png",
+                    lang: "it"
+                },
+                {
+                    img: "img/france.png",
+                    lang: "fr"
+                },
+                {
+                    img: "img/united-kingdom.png",
+                    lang: "en"
+                },
+                {
+                    img: "img/spain.png",
+                    lang: "es"
+                },
+                {
+                    img: "img/german-flag.png",
+                    lang: "de"
+                },
+                {
+                    img: "img/rainbow.png",
+                    lang: ""
+                }
+            ]
+
+
+        }
+
+    },
+    computed: {
+        assignFlags() {
+
+            for (let i = 0; i < this.listFlags.length; i++) {
+                if (this.listFlags[i].lang.includes(this.details.original_language)) {
+                    return this.listFlags[i].img
+                }
+            }
+            return this.listFlags[this.listFlags.length - 1].img
+        }
+
     }
+
 }
 </script>
 
@@ -12,8 +58,16 @@ export default {
     <!-- template card singola -->
     <div class="movie">
         <img :src="`https://image.tmdb.org/t/p/w200/${details.poster_path}`" alt="">
-        <div>{{ details.title }}</div>
-        <div>{{ details.original_title }}</div>
+
+        <div>Titolo Film: {{ details.title }}</div>
+
+        <div>Titolo originale serie tv : {{ details.original_title }}</div>
+
+
+        <div>
+            <img :src="assignFlags" alt="" class="bandiera">
+        </div>
+
         <div> Language: {{ details.original_language }}</div>
         <div>{{ details.vote_average }}</div>
     </div>
@@ -23,5 +77,9 @@ export default {
 <style scoped>
 .movie {
     width: calc(100% / 5);
+}
+
+.bandiera {
+    width: 40px;
 }
 </style>
