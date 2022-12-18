@@ -1,0 +1,25 @@
+// REGOLE GENERALI:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+// LAYOUT:
+.container {
+    max-width: 95%;
+    margin: 50px;
+    // debug
+    // border: 1px solid white;
+}

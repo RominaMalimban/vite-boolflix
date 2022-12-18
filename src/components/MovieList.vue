@@ -21,7 +21,7 @@ export default {
     <section>
 
         <!-- contenitore padre che contiene singola card movie -->
-        <div class="movies">
+        <div class="movies container">
 
             <SingleMovie v-for="(movie, index) in store.movieList" :key="index" :details="movie" />
         </div>
