@@ -3,14 +3,12 @@ import axios from 'axios'
 import { store } from './store.js';
 import AppHeader from './components/AppHeader.vue';
 import MovieList from './components/MovieList.vue';
-import AppSearch from './components/AppSearch.vue';
 
 export default {
   name: "App",
   components: {
     AppHeader,
-    MovieList,
-    AppSearch
+    MovieList
   },
   data() {
     return {
@@ -46,11 +44,11 @@ export default {
 
 <template>
 
-  <AppHeader />
-  <AppSearch @searchMovie="getMovies" />
+  <AppHeader @searchMovie="getMovies" />
   <MovieList />
 </template>
 
-<style >
-
+<style lang="scss">
+@use './styles/generals.scss' as*;
+@use './styles/partials/variables' as*;
 </style>
