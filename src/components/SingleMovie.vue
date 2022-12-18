@@ -105,10 +105,6 @@ export default {
             <!-- chiusura layover -->
         </div>
 
-
-
-
-
     </div>
 
 </template>
@@ -140,6 +136,7 @@ export default {
             padding: 5px 8px;
             background-color: black;
             border: 1px solid #e50914;
+            overflow: auto;
 
             div,
             span {
@@ -164,10 +161,12 @@ export default {
             }
         }
 
-        &.poster:hover .layover {
+        &:hover .layover {
             display: block;
         }
     }
+
+
 
 }
 </style>
