@@ -34,5 +34,6 @@ export default {
 .movies {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 120px;
 }
 </style>
