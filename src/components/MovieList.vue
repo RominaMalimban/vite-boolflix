@@ -17,7 +17,6 @@ export default {
 </script>
 
 <template>
-
     <section>
 
         <!-- contenitore padre che contiene singola card movie -->
@@ -26,8 +25,6 @@ export default {
             <SingleMovie v-for="(movie, index) in store.movieList" :key="index" :details="movie" />
         </div>
     </section>
-
-
 </template>
 
 <style scoped>

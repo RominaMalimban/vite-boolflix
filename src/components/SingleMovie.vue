@@ -32,10 +32,7 @@ export default {
                     lang: ""
                 }
             ]
-
-
         }
-
     },
     computed: {
         // funzione per trasformare stringa statica della lingua in immagine: 
@@ -96,7 +93,7 @@ export default {
 
                 <!-- lingua e bandiera: -->
                 <div class="language">
-                    <span class="title">Language:</span>
+                    <span class="title">Lingua:</span>
                     <!-- {{ details.original_language }}  ===> lingua -->
                     <img :src="assignFlags" alt="" class="flag-image">
                 </div>
@@ -151,7 +148,7 @@ export default {
             left: 0;
             height: 100%;
             padding: 5px 8px;
-            background-color: $black-color;
+            background-color: rgba(0, 0, 0, 0.849);
             border: 1px solid $red-color;
             overflow: auto;
 
