@@ -61,7 +61,8 @@ export default {
     <div class="movie">
 
         <div class="poster-main">
-            <img :src="`https://image.tmdb.org/t/p/w500/${details.poster_path}`" alt="" class="poster">
+            <img :src="`https://image.tmdb.org/t/p/w500/${details.poster_path}`" onerror="this.src='img/notfound.png'"
+                alt="" class="poster">
 
             <!-- layover in display none -->
             <div class="layover">
